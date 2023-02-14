@@ -1,7 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Tagbanwa&display=swap');
+/* font-family: 'Noto Sans Tagbanwa', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+/* font-family: 'Montserrat', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+/* font-family: 'Kanit', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+/* font-family: 'Fira Sans', sans-serif; */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     list-style-type: none;
     text-decoration: none;
+}
+
+body {
+    user-select: none;
+    -moz-user-select: none;
+}
+
+.drag-false {
+    -webkit-user-drag: none;
+}
+
+.Navbar i {
+    color: #ffffff;
+}
+
+.Navbar {
+    background-color: #18122B;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Navbar .leftContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.Navbar .leftContainer .logoContainer {
+    padding: 2px;
+    margin: 1px;
+}
+
+.Navbar .leftContainer .logoContainer i {
+    font-size: 1.3em;
+    padding: 0.5px;
+    margin: 0.5px;
+}
+
+.Navbar .leftContainer .nameContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Navbar .leftContainer .nameContainer .headingContainer {
+    padding: 1px;
+    margin: 1px;
+}
+
+.Navbar .leftContainer .nameContainer .headingContainer .heading {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.5px;
+    margin: 0.5px;
+}
+
+.Navbar .leftContainer .nameContainer .headingContainer .heading h2 {
+    font-family: 'Noto Sans Tagbanwa', sans-serif;
+    font-size: 0.89em;
+    padding: 1px;
+    margin: 1px;
+    color: rgb(255, 255, 255);
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.Navbar .leftContainer .nameContainer .headingContainer .heading i {
+    padding: 0 1px;
+    margin: 0 1px;
+    font-size: 1em;
+    transform-origin: center;
+    transition: all 0.25s;
+}
+
+.Navbar .leftContainer .nameContainer .headingContainer .heading i:hover {
+    font-size: 1.3em;
+    transform: rotateZ(-20deg);
+}
+
+.Navbar .leftContainer .nameContainer .subheadingContainer {
+    padding: 0.5px;
+    margin: 0.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Navbar .leftContainer .nameContainer .subheadingContainer .subheading {
+    padding: 1px;
+    margin: 1px;
+}
+
+.Navbar .leftContainer .nameContainer .subheadingContainer .subheading h4 {
+    font-family: 'Montserrat', sans-serif;
+    color: #f0eeedb8;
+    margin: 1px;
+    padding: 1px;
+    text-transform: capitalize;
+    cursor: pointer;
+    font-size: 0.7em;
+}
+
+.Navbar .leftContainer .nameContainer .subheadingContainer .subheading h4:hover {
+    color: #ffffff;
+}
+
+.Navbar .rightContainer {
+    padding: 1px;
+    margin: 1px;
+}
+
+.Navbar .rightContainer .boxContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 1px;
+    margin: 0 1px;
+}
+
+.Navbar .rightContainer .boxContainer .buttonBox {
+    max-height: 6vh;
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 6px 8px;
+    margin: 0 5px;
+    border-radius: 4px;
+    border: 1px solid #ffffff;
+    background-color: #18122B;
+    transition: all 0.2s;
+}
+
+.Navbar .rightContainer .boxContainer .buttonBox:hover {
+    background-color: #ffffff;
+    border-color: #18122B;
+}
+
+.Navbar .rightContainer .boxContainer .buttonBox span {
+    font-family: 'Kanit', sans-serif;
+    color: #ffffff;
+    padding: 0 0.5px;
+    margin: 0 0.5px;
+    text-transform: lowercase;
+    font-size: 0.8em;
+}
+
+.Navbar .rightContainer .boxContainer .buttonBox:hover span {
+    color: #18122B;
+}
+
+.Navbar .rightContainer .boxContainer .buttonBox i {
+    font-size: 0.9em;
+    padding: 0 1px;
+    margin: 0 1px;
+}
+
+.Navbar .rightContainer .boxContainer .buttonBox:hover i {
+    color: #18122B;
+}
+
+#toggleLayout {
+    transform: rotateZ(90deg);
+}
+
+.editSec {
+    background-color: #18122B;
+    padding: 9px 0;
+    border-top: 1px solid #9e9e9e;
+}
+
+.window {
+    background-color: #18122B;
+    border-top: 1px solid #9e9e9e;
+    border-bottom: 1px solid #9e9e9e;
+    display: flex;
+    flex-direction: column;
+}
+
+.window .editor {
+    display: flex;
+    flex-direction: row;
+    background-color: #18122B;
+    height: 200px;
+}
+
+.window .editor .editinCont {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    background-color: #18122B;
+    margin: 0 6px;
+    border-right: 1px solid #9e9e9e;
+    border-left: 1px solid #9e9e9e;
+}
+
+.window .editor .editinCont .innerTopContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #9e9e9e;
+}
+
+.window .editor .editinCont .innerTopContainer .name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    background-color: #9e9e9e7e;
+    padding: 4px 4.5px;
+}
+
+.window .editor .editinCont .innerTopContainer .name p {
+    color: black;
+    font-size: 0.7em;
+    text-transform: uppercase;
+    padding: 0 1px;
+    margin: 0 1px;
+    font-family: 'Fira Sans', sans-serif;
+    color: #f0eeedb8;
+}
+
+.window .editor .editinCont .innerTopContainer .optionsContainer {
+    padding: 1px;
+    margin: 1px;
+}
+
+.window .editor .editinCont .innerTopContainer .optionsContainer .settingContainer {
+    padding: 0 5px;
+    margin: 0 3px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.window .editor .editinCont .innerTopContainer .optionsContainer .settingContainer i {
+    padding: 3px 5.5px;
+    margin: 0 3px;
+    font-size: 0.567em;
+    border-radius: 2px;
+    border: 1px solid #BDCDD6;
+    background-color: #BDCDD6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.window .editor .editinCont .editWindow {
+    width: fit-content;
+}
+
+.window .editor .editinCont .editWindow textarea {
+    color: #9e9e9e;
+    font-size: 0.9em;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    outline: none;
+    resize: none;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 11px;
+    padding-right: 0px;
+    background-color: #18122B;
+    border: none;
+    width: 266px;
+    height: 176px;
+}
+
+.window .editor .editinCont .editWindow textarea::-webkit-scrollbar {
+    width: 8px;
+}
+
+.window .editor .editinCont .editWindow textarea::-webkit-scrollbar-thumb {
+    background-color: #ffffff88;
+}
+
+.icons {
+    width: 15px;
+    height: auto;
+}
+
+.showOutput {
+    background-color: #ffffff;
+    border-bottom: 1px solid #18122B;
 }

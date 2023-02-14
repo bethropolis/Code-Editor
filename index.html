@@ -9,10 +9,115 @@
     <title>Code Editor</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="index.js"></script>
+    <script src="https://kit.fontawesome.com/e5b27e83b5.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    
+    <!-- Navbar -->
+    <nav class="Navbar">
+        <div class="leftContainer">
+            <div class="logoContainer">
+                <i class="fa-solid fa-cubes"></i>
+            </div>
+            <div class="nameContainer">
+                <div class="headingContainer">
+                    <div class="heading">
+                        <h2>Untitled</h2>
+                        <i class="fa-solid fa-pencil"></i>
+                    </div>
+                </div>
+                <div class="subheadingContainer">
+                    <div class="subheading">
+                        <h4>Karan Yadav</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rightContainer">
+            <div class="boxContainer">
+                <div class="buttonBox">
+                    <i class="fa-solid fa-cloud"></i>
+                    <span>save</span>
+                </div>
+                <div class="buttonBox">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>settings</span>
+                </div>
+                <div class="buttonBox">
+                    <i class="fa-solid fa-list" id="toggleLayout"></i>
+                </div>
+                <div class="buttonBox">
+                    <i class="fa-solid fa-thumbtack"></i>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="buttonBox">
+                    <i class="fa-solid fa-user-ninja"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Editor window -->
+    <section class="editSec">
+        <div class="window">
+            <div class="editor">
+                <div class="editinCont">
+                    <div class="innerTopContainer">
+                        <div class="name">
+                            <img src="./assets/html.svg" alt="" class="icons drag-false">
+                            <p>html</p>
+                        </div>
+                        <div class="optionsContainer">
+                            <div class="settingContainer">
+                                <i class="fa-solid fa-gear"></i>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="editWindow">
+                        <textarea name="code" id="htmlCode" cols="30" rows="10"></textarea>
+                    </div>
+                </div>
+                <div class="editinCont">
+                    <div class="innerTopContainer">
+                        <div class="name">
+                            <img src="./assets/css.svg" alt="" class="icons drag-false">
+                            <p>css</p>
+                        </div>
+                        <div class="optionsContainer">
+                            <div class="settingContainer">
+                                <i class="fa-solid fa-gear"></i>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="editWindow">
+                        <textarea name="code" id="cssCode" cols="30" rows="10"></textarea>
+                    </div>
+                </div>
+                <div class="editinCont">
+                    <div class="innerTopContainer">
+                        <div class="name">
+                            <img src="./assets/js.svg" alt="" class="icons drag-false">
+                            <p>js</p>
+                        </div>
+                        <div class="optionsContainer">
+                            <div class="settingContainer">
+                                <i class="fa-solid fa-gear"></i>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="editWindow">
+                        <textarea name="code" id="jsCode" cols="30" rows="10" style="width: 267px;"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- result window -->
+    <div class="showOutput">
+
+    </div>
 </body>
 
 </html>
