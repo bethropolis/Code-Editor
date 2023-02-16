@@ -6,6 +6,8 @@
 /* font-family: 'Kanit', sans-serif; */
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
 /* font-family: 'Fira Sans', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap');
+/* font-family: 'Hind Siliguri', sans-serif; */
 
 * {
     margin: 0;
@@ -18,14 +20,12 @@
 body {
     user-select: none;
     -moz-user-select: none;
+    background-color: #18122B;
+    overflow: hidden;
 }
 
 .drag-false {
     -webkit-user-drag: none;
-}
-
-.Navbar i {
-    color: #ffffff;
 }
 
 .Navbar {
@@ -51,6 +51,7 @@ body {
     font-size: 1.3em;
     padding: 0.5px;
     margin: 0.5px;
+    color: #ffffff;
 }
 
 .Navbar .leftContainer .nameContainer {
@@ -88,6 +89,7 @@ body {
     font-size: 1em;
     transform-origin: center;
     transition: all 0.25s;
+    color: #ffffff;
 }
 
 .Navbar .leftContainer .nameContainer .headingContainer .heading i:hover {
@@ -136,7 +138,6 @@ body {
 }
 
 .Navbar .rightContainer .boxContainer .buttonBox {
-    max-height: 6vh;
     width: fit-content;
     display: flex;
     flex-direction: row;
@@ -171,22 +172,102 @@ body {
 
 .Navbar .rightContainer .boxContainer .buttonBox i {
     font-size: 0.9em;
-    padding: 0 1px;
+    padding: 4px 1px;
     margin: 0 1px;
+    color: #ffffff;
 }
 
-.Navbar .rightContainer .boxContainer .buttonBox:hover i {
+.Navbar .rightContainer .boxContainer .buttonBox:hover .hover {
     color: #18122B;
 }
 
-#toggleLayout {
+.Navbar .rightContainer .boxContainer .buttonBox .layoutOptionsCont {
+    flex-direction: column;
+    align-items: center;
+    background-color: #9e9e9e;
+    position: absolute;
+    margin-top: 90px;
+    border-radius: 4px;
+    transition: all 0.5s;
+    animation: slideDown 0.5s linear;
+    z-index: 2;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+        z-index: 1;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+        z-index: 2;
+    }
+}
+
+.Navbar .rightContainer .boxContainer .buttonBox .layoutOptionsCont .heading {
+    padding: 4px 8px;
+    border-bottom: 1px solid #565454;
+}
+
+.Navbar .rightContainer .boxContainer .buttonBox .layoutOptionsCont .heading p {
+    color: #ffffff;
+    font-size: 0.7em;
+    text-transform: none;
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+.Navbar .rightContainer .boxContainer .buttonBox .layoutOptionsCont .layoutOptions {
+    display: flex;
+    flex-direction: row;
+}
+
+.Navbar .rightContainer .boxContainer .buttonBox .layoutOptionsCont .layoutOptions i {
+    padding: 5px 5px;
+    color: #ffffff;
+    font-size: 0.8em;
+    transition: all 0.34s;
+}
+
+.rotate-90deg {
     transform: rotateZ(90deg);
+}
+
+#editor_top:hover {
+    background-color: rgba(255, 255, 255, 0.537);
+    color: #000000;
+}
+
+.rotate-0deg {
+    transform: rotateZ(0deg);
+}
+
+#editor_left:hover {
+    background-color: rgba(255, 255, 255, 0.537);
+    color: #000000;
+}
+
+.rotate-180deg {
+    transform: rotateZ(180deg);
+}
+
+#editor_right:hover {
+    background-color: rgba(255, 255, 255, 0.537);
+    color: #000000;
+}
+
+#editorDiv {
+    display: flex;
+    flex-direction: column;
+    transition: all 0.34s;
 }
 
 .editSec {
     background-color: #18122B;
     padding: 9px 0;
     border-top: 1px solid #9e9e9e;
+    width: fit-content;
 }
 
 .window {
@@ -195,13 +276,14 @@ body {
     border-bottom: 1px solid #9e9e9e;
     display: flex;
     flex-direction: column;
+    width: fit-content;
 }
 
 .window .editor {
     display: flex;
     flex-direction: row;
     background-color: #18122B;
-    height: 200px;
+    transition: all 0.34s;
 }
 
 .window .editor .editinCont {
@@ -209,9 +291,11 @@ body {
     flex-direction: column;
     width: 300px;
     background-color: #18122B;
-    margin: 0 6px;
+    margin: 0 9px;
     border-right: 1px solid #9e9e9e;
     border-left: 1px solid #9e9e9e;
+    border-bottom: none;
+    transition: all 0.5s;
 }
 
 .window .editor .editinCont .innerTopContainer {
@@ -220,6 +304,7 @@ body {
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid #9e9e9e;
+    transition: all 0.3s;
 }
 
 .window .editor .editinCont .innerTopContainer .name {
@@ -229,6 +314,8 @@ body {
     flex-direction: row;
     background-color: #9e9e9e7e;
     padding: 4px 4.5px;
+    transform-origin: top left;
+    transition: all 0.5s;
 }
 
 .window .editor .editinCont .innerTopContainer .name p {
@@ -239,6 +326,7 @@ body {
     margin: 0 1px;
     font-family: 'Fira Sans', sans-serif;
     color: #f0eeedb8;
+    transition: all 0.25s;
 }
 
 .window .editor .editinCont .innerTopContainer .optionsContainer {
@@ -304,4 +392,11 @@ body {
 .showOutput {
     background-color: #ffffff;
     border-bottom: 1px solid #18122B;
+    width: fit-content;
+    height: fit-content;
+}
+
+#showOutPutFrame {
+    background-color: #ffffff;
+    border: none;
 }

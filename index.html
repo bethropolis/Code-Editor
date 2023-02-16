@@ -36,87 +36,99 @@
         <div class="rightContainer">
             <div class="boxContainer">
                 <div class="buttonBox">
-                    <i class="fa-solid fa-cloud"></i>
+                    <i class="fa-solid fa-cloud hover"></i>
                     <span>save</span>
                 </div>
                 <div class="buttonBox">
-                    <i class="fa-solid fa-gear"></i>
+                    <i class="fa-solid fa-gear hover"></i>
                     <span>settings</span>
                 </div>
-                <div class="buttonBox">
-                    <i class="fa-solid fa-list" id="toggleLayout"></i>
+                <div class="buttonBox" id="toggleLayoutBtn">
+                    <i class="fa-solid fa-list hover rotate-90deg" id="toggleLayout"></i>
+                    <div class="layoutOptionsCont" id="layoutOptionsContainer" style="display: none;">
+                        <div class="heading">
+                            <p>Change layout</p>
+                        </div>
+                        <div class="layoutOptions">
+                            <i class="fa-solid fa-list rotate-0deg" id="editor_left" title="left oriented"></i>
+                            <i class="fa-solid fa-list rotate-90deg" id="editor_top" title="top oriented"></i>
+                            <i class="fa-solid fa-list rotate-180deg" id="editor_right" title="right oriented"></i>
+                        </div>
+                    </div>
                 </div>
                 <div class="buttonBox">
-                    <i class="fa-solid fa-thumbtack"></i>
-                    <i class="fa-solid fa-chevron-down"></i>
+                    <i class="fa-solid fa-thumbtack hover"></i>
+                    <i class="fa-solid fa-chevron-down hover"></i>
                 </div>
                 <div class="buttonBox">
-                    <i class="fa-solid fa-user-ninja"></i>
+                    <i class="fa-solid fa-user-ninja hover"></i>
                 </div>
             </div>
         </div>
     </nav>
-    <!-- Editor window -->
-    <section class="editSec">
-        <div class="window">
-            <div class="editor">
-                <div class="editinCont">
-                    <div class="innerTopContainer">
-                        <div class="name">
-                            <img src="./assets/html.svg" alt="" class="icons drag-false">
-                            <p>html</p>
-                        </div>
-                        <div class="optionsContainer">
-                            <div class="settingContainer">
-                                <i class="fa-solid fa-gear"></i>
-                                <i class="fa-solid fa-chevron-down"></i>
+    <div id="editorDiv" style="flex-direction: column;">
+        <!-- Editor window -->
+        <section class="editSec">
+            <div class="window">
+                <div class="editor" id="editor">
+                    <div class="editinCont" id="htmlContainer">
+                        <div class="innerTopContainer" id="htmlInnerContainer">
+                            <div class="name" id="htmlNameContainer" title="double click to expand">
+                                <img src="./assets/html.svg" alt="" class="icons drag-false" id="htmlImg">
+                                <p id="htmlName">html</p>
+                            </div>
+                            <div class="optionsContainer" id="htmlOptionCont">
+                                <div class="settingContainer">
+                                    <i class="fa-solid fa-gear"></i>
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="editWindow">
-                        <textarea name="code" id="htmlCode" cols="30" rows="10"></textarea>
-                    </div>
-                </div>
-                <div class="editinCont">
-                    <div class="innerTopContainer">
-                        <div class="name">
-                            <img src="./assets/css.svg" alt="" class="icons drag-false">
-                            <p>css</p>
+                        <div class="editWindow">
+                            <textarea name="code" id="htmlCode" cols="30" rows="10"></textarea>
                         </div>
-                        <div class="optionsContainer">
-                            <div class="settingContainer">
-                                <i class="fa-solid fa-gear"></i>
-                                <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="editinCont" id="cssContainer">
+                        <div class="innerTopContainer" id="cssInnerContainer">
+                            <div class="name" id="cssNameContainer" title="double click to expand">
+                                <img src="./assets/css.svg" alt="" class="icons drag-false" id="cssImg">
+                                <p id="cssName">css</p>
+                            </div>
+                            <div class="optionsContainer" id="cssOptionCont">
+                                <div class="settingContainer">
+                                    <i class="fa-solid fa-gear"></i>
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="editWindow">
-                        <textarea name="code" id="cssCode" cols="30" rows="10"></textarea>
-                    </div>
-                </div>
-                <div class="editinCont">
-                    <div class="innerTopContainer">
-                        <div class="name">
-                            <img src="./assets/js.svg" alt="" class="icons drag-false">
-                            <p>js</p>
+                        <div class="editWindow">
+                            <textarea name="code" id="cssCode" cols="30" rows="10"></textarea>
                         </div>
-                        <div class="optionsContainer">
-                            <div class="settingContainer">
-                                <i class="fa-solid fa-gear"></i>
-                                <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="editinCont" id="jsContainer">
+                        <div class="innerTopContainer" id="jsInnerContainer">
+                            <div class="name" id="jsNameContainer" title="double click to expand">
+                                <img src="./assets/js.svg" alt="" class="icons drag-false" id="jsImg">
+                                <p id="jsName">js</p>
+                            </div>
+                            <div class="optionsContainer" id="jsOptionCont">
+                                <div class="settingContainer">
+                                    <i class="fa-solid fa-gear"></i>
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="editWindow">
-                        <textarea name="code" id="jsCode" cols="30" rows="10" style="width: 267px;"></textarea>
+                        <div class="editWindow">
+                            <textarea name="code" id="jsCode" cols="30" rows="10"></textarea>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
+        <!-- result window -->
+        <div class="showOutput">
+            <iframe id="showOutPutFrame" src=""></iframe>
         </div>
-    </section>
-    <!-- result window -->
-    <div class="showOutput">
-
     </div>
 </body>
 
