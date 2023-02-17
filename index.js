@@ -95,6 +95,8 @@ updateSize();
 window.addEventListener("resize", updateSize);
 
 htmlNameContainer.addEventListener("dblclick", () => {
+    revertChanges();
+
     if ((editorDiv.style.flexDirection == 'column')) {
         let offset = 9;
         let width = (window.innerWidth - (5.4 * offset));
@@ -120,10 +122,18 @@ htmlNameContainer.addEventListener("dblclick", () => {
 
         cssOptionCont.style.display = `none`;
         jsOptionCont.style.display = `none`;
+
+        htmlCode.style.width = `${(width - offset)}px`;
+        cssCode.style.display = `none`;
+        jsCode.style.display = `none`;
+        
+        htmlNameContainer.title = "click to get previous size";
     }
 })
 
 cssNameContainer.addEventListener("dblclick", () => {
+    revertChanges();
+
     if ((editorDiv.style.flexDirection == 'column')) {
         let offset = 9;
         let width = (window.innerWidth - (5.6 * offset));
@@ -151,10 +161,18 @@ cssNameContainer.addEventListener("dblclick", () => {
 
         htmlOptionCont.style.display = `none`;
         jsOptionCont.style.display = `none`;
+
+        htmlCode.style.display = `none`;
+        cssCode.style.width = `${(width - offset)}px`;
+        jsCode.style.display = `none`;
+
+        cssNameContainer.title = "click to get previous size";
     }
 })
 
 jsNameContainer.addEventListener("dblclick", () => {
+    revertChanges();
+
     if ((editorDiv.style.flexDirection == 'column')) {
         let offset = 9;
         let width = (window.innerWidth - (5.6 * offset));
@@ -182,11 +200,65 @@ jsNameContainer.addEventListener("dblclick", () => {
 
         htmlOptionCont.style.display = `none`;
         cssOptionCont.style.display = `none`;
+        
+        htmlCode.style.display = `none`;
+        cssCode.style.display = `none`;
+        jsCode.style.width = `${(width - offset)}px`;
+
+        jsNameContainer.title = "click to get previous size";
     }
 })
 
-function revertChanges() {
+htmlNameContainer.addEventListener("click", () => {
+    revertChanges();
+})
 
+cssNameContainer.addEventListener("click", () => {
+    revertChanges();
+})
+
+jsNameContainer.addEventListener("click", () => {
+    revertChanges();
+})
+
+function revertChanges() {
+    updateSize();
+
+    htmlContainer.style.marginLeft = `9px`;
+
+    htmlContainer.style.borderRight = `1px solid #9e9e9e`;
+    cssContainer.style.borderRight = `1px solid #9e9e9e`;
+    jsContainer.style.borderRight = `1px solid #9e9e9e`;
+
+    htmlInnerContainer.style.borderBottom = `1px solid #9e9e9e`;
+    cssInnerContainer.style.borderBottom = `1px solid #9e9e9e`;
+    jsInnerContainer.style.borderBottom = `1px solid #9e9e9e`;
+
+    htmlNameContainer.style.transform = `rotateZ(0deg)`;
+    cssNameContainer.style.transform = `rotateZ(0deg)`;
+    jsNameContainer.style.transform = `rotateZ(0deg)`;
+
+    htmlImg.style.width = `15px`;
+    cssImg.style.width = `15px`;
+    jsImg.style.width = `15px`;
+
+    htmlName.style.fontSize = `0.7em`;
+    cssName.style.fontSize = `0.7em`;
+    jsName.style.fontSize = `0.7em`;
+
+    htmlOptionCont.style.display = `flex`;
+    cssOptionCont.style.display = `flex`;
+    jsOptionCont.style.display = `flex`;
+
+    htmlCode.style.display = `block`;
+    cssCode.style.display = `block`;
+    jsCode.style.display = `block`;
+}
+
+function setTitles(text) {
+    htmlNameContainer.title = `${text}`;
+    cssNameContainer.title = `${text}`;
+    jsNameContainer.title = `${text}`;
 }
 
 toggleLayoutBtn.addEventListener('click', () => {
@@ -203,6 +275,7 @@ editor_left.addEventListener('click', () => {
     toggleLayout.className = `fa-solid fa-list hover rotate-0deg`;
     htmlContainer.style.borderBottom = `1px solid #9e9e9e`;
     cssContainer.style.borderBottom = `1px solid #9e9e9e`;
+    setTitles("");
 })
 
 editor_top.addEventListener('click', () => {
@@ -210,6 +283,7 @@ editor_top.addEventListener('click', () => {
     toggleLayout.className = `fa-solid fa-list hover rotate-90deg`;
     htmlContainer.style.borderBottom = `none`;
     cssContainer.style.borderBottom = `none`;
+    setTitles("double click to expand");
 })
 
 editor_right.addEventListener('click', () => {
@@ -217,10 +291,11 @@ editor_right.addEventListener('click', () => {
     toggleLayout.className = `fa-solid fa-list hover rotate-180deg`;
     htmlContainer.style.borderBottom = `1px solid #9e9e9e`;
     cssContainer.style.borderBottom = `1px solid #9e9e9e`;
+    setTitles("");
 })
 
 function changeLayout(editorDiv_flexDirection, editor_flexDirection) {
     editorDiv.style.flexDirection = editorDiv_flexDirection;
     editor.style.flexDirection = editor_flexDirection;
-    updateSize();
+    revertChanges();
 }
