@@ -5,15 +5,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
     <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+    <!-- Title -->
     <title>Code Editor</title>
+    <!-- Css -->
     <link rel="stylesheet" href="style.css">
+    <!-- Javascript -->
     <script defer src="index.js"></script>
     <script src="https://kit.fontawesome.com/e5b27e83b5.js" crossorigin="anonymous"></script>
     <script defer src="script.js"></script>
 </head>
 
 <body>
+    <!-- Fixed container -->
+    <div class="fixedContainer" id="fixedCont" style="display: none;">
+        <div class="innerBox">
+            <div class="header">
+                <div class="nameCont">
+                    <h4>settings</h4>
+                </div>
+                <div class="crossIconCont">
+                    <i class="fa-solid fa-close" id="closeFixedContBtn"></i>
+                </div>
+            </div>
+            <div class="mainContainer">
+                <div class="leftCont">
+                    <div class="items">
+                        <h5 class="active">change name</h5>
+                    </div>
+                </div>
+                <div class="rightCont">
+                    <div class="inputCont">
+                        <label for="title">Title</label>
+                        <input type="text" name="titletext" id="title_inp" placeholder="title ..." autocomplete="off">
+                    </div>
+                    <div class="inputCont">
+                        <label for="owner">owner</label>
+                        <input type="text" name="ownertext" id="owner_inp" placeholder="owner name ..." autocomplete="off">
+                    </div>
+                    <div class="buttonCont">
+                        <button id="fixed_okBtn">
+                            <span>ok</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Navbar -->
     <nav class="Navbar">
         <div class="leftContainer">
@@ -23,13 +62,13 @@
             <div class="nameContainer">
                 <div class="headingContainer">
                     <div class="heading">
-                        <h2>Untitled</h2>
+                        <h2 id="projectNameTag" title="set title and owner name">Untitled</h2>
                         <i class="fa-solid fa-pencil"></i>
                     </div>
                 </div>
                 <div class="subheadingContainer">
                     <div class="subheading">
-                        <h4>Karan Yadav</h4>
+                        <h4 id="ownerNameTag">Karan Yadav</h4>
                     </div>
                 </div>
             </div>
@@ -40,7 +79,7 @@
                     <i class="fa-solid fa-cloud hover"></i>
                     <span>save</span>
                 </div>
-                <div class="buttonBox">
+                <div class="buttonBox" id="settingsBtn_nav">
                     <i class="fa-solid fa-gear hover"></i>
                     <span>settings</span>
                 </div>
@@ -128,7 +167,7 @@
         </section>
         <!-- result window -->
         <div class="showOutput">
-            <iframe id="showOutPutFrame" src=""></iframe>
+            <iframe id="showOutPutFrame"></iframe>
         </div>
     </div>
 </body>
