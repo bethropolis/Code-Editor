@@ -1,3 +1,5 @@
+// Show output in iframe
+
 function getHtmlCode() {
     return htmlCode.value;
 }

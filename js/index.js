@@ -1,8 +1,20 @@
+// sizing(responsive design) and getting elements from dom
+
 const fixedCont = document.getElementById("fixedCont");
 const closeFixedContBtn = document.getElementById("closeFixedContBtn");
 const title_inp = document.getElementById("title_inp");
 const owner_inp = document.getElementById("owner_inp");
 const fixed_okBtn = document.getElementById("fixed_okBtn");
+const changeName_btn = document.getElementById("changeName_btn");
+const changeFont_btn = document.getElementById("changeFont_btn");
+const fixed_rightCont = document.getElementById("fixed_rightCont");
+const fixed_changeNameCont = document.getElementById("fixed_changeNameCont");
+const fixed_changeFontCont = document.getElementById("fixed_changeFontCont");
+const fixed_textColorChoose = document.getElementById("fixed_textColorChoose");
+const fixed_textColorInp = document.getElementById("fixed_textColorInp");
+const fixed_fontSizeInp = document.getElementById("fixed_fontSizeInp");
+const fixed_selectFontFamily = document.getElementById("fixed_selectFontFamily");
+const fixed_applyBtn = document.getElementById("fixed_applyBtn");
 
 const projectNameTag = document.getElementById("projectNameTag");
 const ownerNameTag = document.getElementById("ownerNameTag");
@@ -43,54 +55,6 @@ const editor_top = document.getElementById("editor_top");
 const editor_right = document.getElementById("editor_right");
 
 const showOutPutFrame = document.getElementById("showOutPutFrame");
-
-function getTitle() {
-    return projectNameTag.innerHTML;
-}
-
-function getOwner() {
-    return ownerNameTag.innerHTML;
-}
-
-function setTitle(title) {
-    projectNameTag.innerHTML = title;
-}
-
-function setOwner(owner) {
-    ownerNameTag.innerHTML = owner;
-}
-
-function showFixedCont() {
-    fixedCont.style.display = "flex";
-    title_inp.value = getTitle();
-    owner_inp.value = getOwner();
-}
-
-function setTitle_Owner() {
-    if (title_inp.value.length > 0) {
-        setTitle(title_inp.value);
-    }
-    if (owner_inp.value.length > 0) {
-        setOwner(owner_inp.value);
-    }
-    closeFixedContBtn.click();
-}
-
-projectNameTag.addEventListener('click', () => {
-    showFixedCont();
-})
-
-closeFixedContBtn.addEventListener('click', () => {
-    fixedCont.style.display = "none";
-})
-
-fixed_okBtn.addEventListener("click", () => {
-    setTitle_Owner();
-})
-
-settingsBtn_nav.addEventListener("click", () => {
-    showFixedCont();
-})
 
 function updateSize() {
     let offset = undefined;
