@@ -10,18 +10,12 @@
     <!-- Title -->
     <title>Code Editor</title>
     <!-- Css -->
-    <link rel="stylesheet" href="./css/style.css?u;k">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/themes/prism-okaidia.min.css">
+    <link rel="stylesheet" href="./css/style.css">
     <!-- Javascript -->
     <script defer src="./js/index.js"></script>
     <script src="https://kit.fontawesome.com/e5b27e83b5.js" crossorigin="anonymous"></script>
     <script defer src="./js/output.js"></script>
     <script defer src="./js/options.js"></script>
-    <!--cdn prism js and css-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
-    <style>
-
-    </style>
 </head>
 
 <body>
@@ -68,8 +62,7 @@
                     <div class="changeFontCont" style="display: none;" id="fixed_changeFontCont">
                         <div class="inputCont">
                             <label for="fontColor">Font Color</label>
-                            <input type="text" name="color" id="fixed_textColorInp"
-                                placeholder="Enter the color or choose it" autocomplete="off">
+                            <input type="text" name="color" id="fixed_textColorInp" placeholder="Enter the color or choose it" autocomplete="off">
                             <input type="color" id="fixed_textColorChoose">
                         </div>
                         <div class="inputCont">
@@ -79,19 +72,13 @@
                         <div class="inputCont">
                             <label for="fontFamily">Font Family</label>
                             <select id="fixed_selectFontFamily" style="font-family: 'Courier New', Courier, monospace;">
-                                <option value="'Courier New', Courier, monospace"
-                                    style="font-family: 'Courier New', Courier, monospace;">Monospace</option>
-                                <option value="'Noto Sans Tagbanwa', sans-serif"
-                                    style="font-family:'Noto Sans Tagbanwa', sans-serif;">Noto Sans Tagbanwa
+                                <option value="'Courier New', Courier, monospace" style="font-family: 'Courier New', Courier, monospace;">Monospace</option>
+                                <option value="'Noto Sans Tagbanwa', sans-serif" style="font-family:'Noto Sans Tagbanwa', sans-serif;">Noto Sans Tagbanwa
                                 </option>
-                                <option value="'Montserrat', sans-serif" style="font-family:'Montserrat', sans-serif;">
-                                    Montserrat</option>
-                                <option value="'Kanit', sans-serif" style="font-family:'Kanit', sans-serif;">Kanit
-                                </option>
-                                <option value="'Fira Sans', sans-serif" style="font-family:'Fira Sans', sans-serif;">
-                                    Fira Sans</option>
-                                <option value="'Hind Siliguri', sans-serif"
-                                    style="font-family:'Hind Siliguri', sans-serif;">Hind Siliguri</option>
+                                <option value="'Montserrat', sans-serif" style="font-family:'Montserrat', sans-serif;">Montserrat</option>
+                                <option value="'Kanit', sans-serif" style="font-family:'Kanit', sans-serif;">Kanit</option>
+                                <option value="'Fira Sans', sans-serif" style="font-family:'Fira Sans', sans-serif;">Fira Sans</option>
+                                <option value="'Hind Siliguri', sans-serif" style="font-family:'Hind Siliguri', sans-serif;">Hind Siliguri</option>
                             </select>
                         </div>
                         <div class="buttonCont">
@@ -176,9 +163,7 @@
                             </div>
                         </div>
                         <div class="editWindow">
-                            <textarea name="code" id="htmlCode" spellcheck="false" cols="30" rows="10"></textarea>
-                            <pre class="highlighting" aria-hidden="true">
-                           <code class="language-html highlighting-content"></code></pre>
+                            <textarea style="color: #9e9e9e; font-size: 0.9em; font-family: 'Courier New', Courier, monospace;" name="code" id="htmlCode" cols="30" rows="10"></textarea>
                         </div>
                     </div>
                     <div class="editinCont" id="cssContainer">
@@ -195,10 +180,7 @@
                             </div>
                         </div>
                         <div class="editWindow">
-                            <textarea
-                                name="code" id="cssCode" spellcheck="false" cols="30" rows="10"></textarea>
-                            <pre class="highlighting" aria-hidden="true"><code class="language-css highlighting-content"></code>
-                            </pre>
+                            <textarea style="color: #9e9e9e; font-size: 0.9em; font-family: 'Courier New', Courier, monospace;" name="code" id="cssCode" cols="30" rows="10"></textarea>
                         </div>
                     </div>
                     <div class="editinCont" id="jsContainer">
@@ -215,9 +197,7 @@
                             </div>
                         </div>
                         <div class="editWindow">
-                            <textarea
-                                name="code" id="jsCode" spellcheck="false" cols="30" rows="10"></textarea>
-                            <pre class="highlighting" aria-hidden="true"><code class="language-js highlighting-content"></code></pre>
+                            <textarea style="color: #9e9e9e; font-size: 0.9em; font-family: 'Courier New', Courier, monospace;" name="code" id="jsCode" cols="30" rows="10"></textarea>
                         </div>
                     </div>
                 </div>
@@ -229,5 +209,5 @@
         </div>
     </div>
 </body>
-<script src="./js/highlight.js"></script>
+
 </html>
