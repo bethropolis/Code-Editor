@@ -593,3 +593,127 @@ body {
     background-color: #ffffff;
     border: none;
 }
+
+/* hey this is the highlight css */
+/* Reduce the size of the scrollbar */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  
+  /* Style the scrollbar track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Style the scrollbar thumb */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+  }
+  
+  .editWindow {
+    position: relative !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+  
+  textarea,
+  .highlighting {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    margin: 0 !important;
+    padding: 10px !important;
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+    resize: none !important;
+    overflow: auto !important;
+    white-space: nowrap !important;
+    background-color: transparent !important;
+    z-index: 1 !important;
+  }
+  textarea,
+  .highlighting,
+  .highlighting *{
+    font-size: 15px !important;
+    font-family: monospace!important;
+    line-height: 20pt!important;
+    tab-size: 2 !important;
+  }
+  textarea {
+    color: transparent;
+    background: transparent;
+    caret-color: white;
+    z-index: 1;
+  }
+  
+  .highlighting {
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  /* Highlighting styles */
+  
+  .token.comment,
+  .token.prolog,
+  .token.doctype,
+  .token.cdata {
+    color: #6c6c6c;
+  }
+  
+  .token.tag,
+  .token.attr-name,
+  .token.namespace,
+  .token.deleted {
+    color: #e2777a;
+  }
+  
+  .token.function-name {
+    color: #6196cc;
+  }
+  
+  .token.boolean,
+  .token.number,
+  .token.function {
+    color: #d19a66;
+  }
+  
+  .token.property,
+  .token.class-name,
+  .token.constant,
+  .token.symbol {
+    color: #fac863;
+  }
+  
+  .token.selector,
+  .token.important,
+  .token.atrule,
+  .token.keyword,
+  .token.builtin {
+    color: #c5a5c5;
+  }
+  
+  .token.string,
+  .token.char,
+  .token.attr-value,
+  .token.regex,
+  .token.variable {
+    color: #8dc891;
+  }
+  
+  .token.operator,
+  .token.entity,
+  .token.url {
+    color: #d4d4d4;
+  }
+  
+  .token.important,
+  .token.bold {
+    font-weight: bold;
+  }
+  
+  .token.italic {
+    font-style: italic;
+  }
