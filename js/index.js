@@ -321,4 +321,3 @@ function changeLayout(editorDiv_flexDirection, editor_flexDirection) {
     editor.style.flexDirection = editor_flexDirection;
     revertChanges();
 }
-
