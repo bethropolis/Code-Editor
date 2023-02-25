@@ -7,6 +7,9 @@ const owner_inp = document.getElementById("owner_inp");
 const fixed_okBtn = document.getElementById("fixed_okBtn");
 const changeName_btn = document.getElementById("changeName_btn");
 const changeFont_btn = document.getElementById("changeFont_btn");
+const changeHtmlSettings_btn = document.getElementById("changeHtmlSettings_btn");
+const changeCssSettings_btn = document.getElementById("changeCssSettings_btn");
+const changeJsSettings_btn = document.getElementById("changeJsSettings_btn");
 const fixed_rightCont = document.getElementById("fixed_rightCont");
 const fixed_changeNameCont = document.getElementById("fixed_changeNameCont");
 const fixed_changeFontCont = document.getElementById("fixed_changeFontCont");
@@ -18,31 +21,47 @@ const fixed_applyBtn = document.getElementById("fixed_applyBtn");
 
 const projectNameTag = document.getElementById("projectNameTag");
 const ownerNameTag = document.getElementById("ownerNameTag");
+const nav_saveBtn = document.getElementById("nav_saveBtn");
 const settingsBtn_nav = document.getElementById("settingsBtn_nav");
 
 const htmlContainer = document.getElementById("htmlContainer");
 const htmlInnerContainer = document.getElementById("htmlInnerContainer");
 const htmlNameContainer = document.getElementById("htmlNameContainer");
 const htmlImg = document.getElementById("htmlImg");
+const htmlLineNumberContainer = document.getElementById("htmlLineNumberContainer");
 const htmlCode = document.getElementById("htmlCode");
+const htmlCode_settingBtn = document.getElementById("htmlCode_settingBtn");
+const htmlCode_downBtn = document.getElementById("htmlCode_downBtn")
 const htmlName = document.getElementById("htmlName");
 const htmlOptionCont = document.getElementById("htmlOptionCont");
+const htmlCodeDown_showOptions_down = document.getElementById("htmlCodeDown_showOptions_down");
+const expandHtmlEditorWindow_Btn = document.getElementById("expandHtmlEditorWindow_Btn");
 
 const cssContainer = document.getElementById("cssContainer");
 const cssInnerContainer = document.getElementById("cssInnerContainer");
 const cssNameContainer = document.getElementById("cssNameContainer");
 const cssImg = document.getElementById("cssImg");
+const cssLineNumberContainer = document.getElementById("cssLineNumberContainer");
 const cssCode = document.getElementById("cssCode");
+const cssCode_settingBtn = document.getElementById("cssCode_settingBtn");
+const cssCode_downBtn = document.getElementById("cssCode_downBtn")
 const cssName = document.getElementById("cssName");
 const cssOptionCont = document.getElementById("cssOptionCont");
+const cssCodeDown_showOptions_down = document.getElementById("cssCodeDown_showOptions_down");
+const expandCssEditorWindow_Btn = document.getElementById("expandCssEditorWindow_Btn");
 
 const jsContainer = document.getElementById("jsContainer");
 const jsInnerContainer = document.getElementById("jsInnerContainer");
 const jsNameContainer = document.getElementById("jsNameContainer");
 const jsImg = document.getElementById("jsImg");
+const jsLineNumberContainer = document.getElementById("jsLineNumberContainer");
 const jsCode = document.getElementById("jsCode");
+const jsCode_settingBtn = document.getElementById("jsCode_settingBtn");
+const jsCode_downBtn = document.getElementById("jsCode_downBtn");
 const jsName = document.getElementById("jsName");
 const jsOptionCont = document.getElementById("jsOptionCont");
+const jsCodeDown_showOptions_down = document.getElementById("jsCodeDown_showOptions_down");
+const expandJsEditorWindow_Btn = document.getElementById("expandJsEditorWindow_Btn");
 
 const editorDiv = document.getElementById("editorDiv");
 const editor = document.getElementById("editor");
@@ -103,6 +122,10 @@ function updateSize() {
     cssContainer.style.height = `${editorHeight}px`;
     jsContainer.style.height = `${editorHeight}px`;
 
+    htmlLineNumberContainer.style.height = `${codeHeight + 0.99}px`;
+    cssLineNumberContainer.style.height = `${codeHeight + 0.99}px`;
+    jsLineNumberContainer.style.height = `${codeHeight + 0.99}px`;
+
     htmlCode.style.width = `${codeWidth}px`;
     htmlCode.style.height = `${codeHeight}px`;
     cssCode.style.width = `${codeWidth}px`;
@@ -145,11 +168,17 @@ htmlNameContainer.addEventListener("dblclick", () => {
         cssOptionCont.style.display = `none`;
         jsOptionCont.style.display = `none`;
 
+        htmlLineNumberContainer.style.display = `${(width - offset)}px`;
+        cssLineNumberContainer.style.display = `none`;
+        jsLineNumberContainer.style.display = `none`;
+
         htmlCode.style.width = `${(width - offset)}px`;
         cssCode.style.display = `none`;
         jsCode.style.display = `none`;
 
         htmlNameContainer.title = "click to get previous size";
+
+        expandHtmlEditorWindow_Btn.children[0].innerHTML = "Shrink";
     }
 })
 
@@ -184,11 +213,17 @@ cssNameContainer.addEventListener("dblclick", () => {
         htmlOptionCont.style.display = `none`;
         jsOptionCont.style.display = `none`;
 
+        htmlLineNumberContainer.style.display = `none`;
+        cssLineNumberContainer.style.display = `${(width - offset)}px`;
+        jsLineNumberContainer.style.display = `none`;
+
         htmlCode.style.display = `none`;
         cssCode.style.width = `${(width - offset)}px`;
         jsCode.style.display = `none`;
 
         cssNameContainer.title = "click to get previous size";
+
+        expandCssEditorWindow_Btn.children[0].innerHTML = "Shrink";
     }
 })
 
@@ -223,11 +258,17 @@ jsNameContainer.addEventListener("dblclick", () => {
         htmlOptionCont.style.display = `none`;
         cssOptionCont.style.display = `none`;
 
+        htmlLineNumberContainer.style.display = `none`;
+        cssLineNumberContainer.style.display = `none`;
+        jsLineNumberContainer.style.display = `${(width - offset)}px`;
+
         htmlCode.style.display = `none`;
         cssCode.style.display = `none`;
         jsCode.style.width = `${(width - offset)}px`;
 
         jsNameContainer.title = "click to get previous size";
+
+        expandJsEditorWindow_Btn.children[0].innerHTML = "Shrink";
     }
 })
 
@@ -272,9 +313,19 @@ function revertChanges() {
     cssOptionCont.style.display = `flex`;
     jsOptionCont.style.display = `flex`;
 
+    htmlLineNumberContainer.style.display = `block`;
+    cssLineNumberContainer.style.display = `block`;
+    jsLineNumberContainer.style.display = `block`;
+
     htmlCode.style.display = `block`;
     cssCode.style.display = `block`;
     jsCode.style.display = `block`;
+
+    expandHtmlEditorWindow_Btn.children[0].innerHTML = "Expand";
+    expandCssEditorWindow_Btn.children[0].innerHTML = "Expand";
+    expandJsEditorWindow_Btn.children[0].innerHTML = "Expand";
+
+    chevronDownOptions("none", "none", "none");
 }
 
 function setTitles(text) {
@@ -290,6 +341,7 @@ toggleLayoutBtn.addEventListener('click', () => {
     else {
         layoutOptionsContainer.style.display = `none`;
     }
+    chevronDownOptions("none", "none", "none");
 })
 
 editor_left.addEventListener('click', () => {
