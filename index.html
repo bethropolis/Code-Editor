@@ -23,7 +23,7 @@
 
   <body>
     <!-- Fixed container -->
-    <div class="fixedContainer" id="fixedCont" style="display: none">
+    <div class="fixedContainer" id="fixedCont" style="display: none;">
       <div class="innerBox">
         <div class="header">
           <div class="nameCont">
@@ -33,7 +33,29 @@
             <i class="fa-solid fa-close" id="closeFixedContBtn"></i>
           </div>
         </div>
-        <div class="mainContainer">
+        <div class="shortcutContainer" id="shortcutCont_settings" style="display: none;">
+          <div class="options">
+            <h4>ctrl + f</h4>
+            <h5 class="desc">search anything</h5>
+          </div>
+          <div class="options">
+            <h4>ctrl + a</h4>
+            <h5 class="desc">select all</h5>
+          </div>
+          <div class="options">
+            <h4>ctrl + c</h4>
+            <h5 class="desc">copy</h5>
+          </div>
+          <div class="options">
+            <h4>ctrl + v</h4>
+            <h5 class="desc">paste</h5>
+          </div>
+          <div class="options">
+            <h4>ctrl + z</h4>
+            <h5 class="desc">undo</h5>
+          </div>
+        </div>
+        <div class="mainContainer" id="fixed_mainConatainer" style="display: flex;">
           <div class="leftCont">
             <div class="items">
               <h5 class="active" id="changeName_btn">change name</h5>
@@ -193,6 +215,17 @@
           <div class="buttonBox" id="nav_saveBtn">
             <i class="fa-solid fa-cloud hover"></i>
             <span>save</span>
+            <div class="saveOptionsContainer" id="saveOptionsCont" style="display: none;">
+              <div class="options">
+                <span id="downloadSepFile_dropDown">download in seperate files</span>
+              </div>
+              <div class="options">
+                <span id="saveLocally_dropDown">save all (locally)</span>
+              </div>
+              <div class="options">
+                <span id="downloadSingleFile_dropDown">download in single file</span>
+              </div>
+            </div>
           </div>
           <div class="buttonBox" id="settingsBtn_nav">
             <i class="fa-solid fa-gear hover"></i>
@@ -230,11 +263,19 @@
               </div>
             </div>
           </div>
-          <div class="buttonBox">
+          <div class="buttonBox" id="thumbTackDropDown_nav">
             <i class="fa-solid fa-thumbtack hover"></i>
             <i class="fa-solid fa-chevron-down hover"></i>
+            <div class="showOptionsContainer" style="display: none;" id="thumbTackDropDown_options">
+              <div class="box" id="showShortcuts_Btn">
+                <span>shortcuts</span>
+              </div>
+              <div class="box">
+                <span>format all</span>
+              </div>
+            </div>
           </div>
-          <div class="buttonBox" style="cursor: default" title="Hello user">
+          <div class="buttonBox" style="cursor: default;" title="Hello user">
             <i class="fa-solid fa-user-ninja hover"></i>
           </div>
         </div>
@@ -277,10 +318,10 @@
                       id="htmlCodeDown_showOptions_down"
                     >
                       <div class="innerCont">
-                        <div class="htmlCodeOptionsDown">
+                        <div class="htmlCodeOptionsDown checkBox" id="notepad_htmlCode_Btn">
                           <span>Notepad</span>
                         </div>
-                        <div class="htmlCodeOptionsDown">
+                        <div class="htmlCodeOptionsDown" id="highlightHtmlCode_Btn">
                           <span>Highlight</span>
                         </div>
                         <div
@@ -345,10 +386,10 @@
                       id="cssCodeDown_showOptions_down"
                     >
                       <div class="innerCont">
-                        <div class="cssCodeOptionsDown">
+                        <div class="cssCodeOptionsDown checkBox" id="notepad_cssCode_Btn">
                           <span>Notepad</span>
                         </div>
-                        <div class="cssCodeOptionsDown">
+                        <div class="cssCodeOptionsDown" id="highlightCssCode_Btn">
                           <span>Highlight</span>
                         </div>
                         <div
@@ -410,10 +451,10 @@
                       id="jsCodeDown_showOptions_down"
                     >
                       <div class="innerCont">
-                        <div class="jsCodeOptionsDown">
+                        <div class="jsCodeOptionsDown checkBox" id="notepad_jsCode_Btn">
                           <span>Notepad</span>
                         </div>
-                        <div class="jsCodeOptionsDown">
+                        <div class="jsCodeOptionsDown" id="highlightJsCode_Btn">
                           <span>Highlight</span>
                         </div>
                         <div
