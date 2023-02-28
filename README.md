@@ -9,3 +9,12 @@
 ![Screenshot 2023-02-25 112925](https://user-images.githubusercontent.com/77043443/221341527-bf67218e-18ec-4dd5-b298-f5f2d51987b1.png)
 # Screenshot 4 
 ![Screenshot 2023-02-25 113323](https://user-images.githubusercontent.com/77043443/221341535-398cec98-7974-42d7-a651-70dacad4d9cb.png)
+# Features:
+- 1. saving the files with three options as follow
+  - 1. save in localstorage
+  - 2. download all files(single)
+  - 3. download multiple files
+- 2. change the orientation of editor and output window accrording to convenience
+- 3. change the font-size and font-color and font-family
+- 4. code in single editor by expanding it
+- 5. Live output will be shown
