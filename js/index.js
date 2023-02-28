@@ -193,6 +193,20 @@ window.addEventListener("load", () => {
   htmlCode.click();
   cssCode.click();
   jsCode.click();
+
+  if (localStorage.getItem("orientation") == "top") {
+    editor_top.click();
+  }
+  else if (localStorage.getItem("orientation") == "left") {
+    editor_left.click();
+  }
+  else if (localStorage.getItem("orientation") == "right") {
+    editor_right.click();
+  }
+  else {
+    editor_top.click();
+  }
+  toggleLayoutBtn.click();
 });
 
 window.addEventListener("offline", () => {
@@ -413,6 +427,7 @@ editor_left.addEventListener("click", () => {
   htmlContainer.style.borderBottom = `1px solid #9e9e9e`;
   cssContainer.style.borderBottom = `1px solid #9e9e9e`;
   setTitles("");
+  localStorage.setItem("orientation", "left");
 });
 
 editor_top.addEventListener("click", () => {
@@ -421,6 +436,7 @@ editor_top.addEventListener("click", () => {
   htmlContainer.style.borderBottom = `none`;
   cssContainer.style.borderBottom = `none`;
   setTitles("double click to expand");
+  localStorage.setItem("orientation", "top");
 });
 
 editor_right.addEventListener("click", () => {
@@ -429,6 +445,7 @@ editor_right.addEventListener("click", () => {
   htmlContainer.style.borderBottom = `1px solid #9e9e9e`;
   cssContainer.style.borderBottom = `1px solid #9e9e9e`;
   setTitles("");
+  localStorage.setItem("orientation", "right");
 });
 
 function changeLayout(editorDiv_flexDirection, editor_flexDirection) {
